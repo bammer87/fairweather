@@ -1,12 +1,9 @@
-import {
-  signInWithGoogle,
-  createUserDocFromAuth,
-} from "../../utils/firebase/firebase.utils";
+import { signInWithGoogle, createUser } from "../../utils/firebase/firebase";
 
 const Signin = () => {
   const logGoogleUser = async () => {
     const { user } = await signInWithGoogle();
-    const userDocRef = await createUserDocFromAuth(user);
+    const userRef = await createUser(user);
   };
   return (
     <div className="signin-container pt-[6rem]">
